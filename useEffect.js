@@ -15,7 +15,7 @@ export default function useEffect(callback, depsArray) {
     let prevDep = prevDepsArray[effectIndex]
     let hasChanged = prevDep? depsArray.every((dep, index) => {
       return dep === prevDep[index]
-    }) : true
+    }) === false : true
     if (hasChanged) {
       callback()
     }
